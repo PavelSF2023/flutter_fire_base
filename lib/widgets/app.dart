@@ -124,9 +124,10 @@ class _AppState extends State<App> {
                     // final databaseReference = FirebaseDatabase.instance.reference();
                     // databaseReference.child('items').push().set({'item': _userToDo});
                     // Navigator.of(context).pop();
-                    await Firebase.initializeApp(); // Инициализация FirebaseApp
-                    final databaseReference = FirebaseDatabase.instance.reference();
-                    databaseReference.child('items').push().set({'item': _userToDo});
+                    setState(() { //это будет в блоке состояния, так как графика должна перерисовываться
+                      listTodo.add(_userToDo); //добавляем в список новую запись
+                    });
+
                     Navigator.of(context).pop();
                   },
                   child: const Text('Добавить'),
