@@ -11,18 +11,20 @@ class MainScreen extends StatelessWidget {
         title: const Text('Список дел'),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          const Text(
-            'Main Screen',
-            style: TextStyle(color: Colors.white),
-          ),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.pushReplacementNamed(context, '/todo');
-              },
-              child: const Text('Перейти далее'))
-        ],
+      body: Center(
+        child: Column(
+          children: [
+            const Text(
+              'Main Screen',
+              style: TextStyle(color: Colors.white),
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/todo');
+                },
+                child: const Text('Перейти далее'))
+          ],
+        ),
       ),
     );
   }
